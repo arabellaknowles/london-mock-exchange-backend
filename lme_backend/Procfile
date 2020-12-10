@@ -1,1 +1,0 @@
-web: gunicorn lme_backend.wsgi --log-file -

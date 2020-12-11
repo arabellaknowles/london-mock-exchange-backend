@@ -7,5 +7,8 @@ from .models import Portfolio
 # Create your views here.
 
 class PortfolioViewSet(viewsets.ModelViewSet):
-    queryset = Portfolio.objects.all().order_by('name')
+    queryset = Portfolio.objects.all()
     serializer_class = PortfolioSerializer
+
+    def perform_create(self, serializer):
+        serializer.save(owner=self.request.user)

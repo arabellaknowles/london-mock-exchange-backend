@@ -1,13 +1,11 @@
 from django.urls import include, path
 from rest_framework import routers
 from users.views import UserListView
-from portfolio.views import PortfolioViewSet
-from transaction.views import TransactionViewSet
+from portfolio.views import PortfolioViewSet, TransactionViewSet
 
 
 router = routers.DefaultRouter()
 router.register(r'portfolio', PortfolioViewSet)
-
 router.register(r'transaction', TransactionViewSet)
 
 

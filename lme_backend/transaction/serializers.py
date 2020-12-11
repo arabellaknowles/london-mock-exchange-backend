@@ -5,13 +5,13 @@ class TransactionSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Transaction
         fields = (
-          'ticker', 
+          'ticker',
           'instrument_name',
           'number_of_shares',
           'trade_date',
           'close_out_date',
           'buy_price',
           'sell_price',
-          'net_earnings', 
+          'net_earnings',
           'portfolio_id'
           )

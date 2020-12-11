@@ -8,8 +8,7 @@ from transaction.views import TransactionViewSet
 router = routers.DefaultRouter()
 router.register(r'portfolio', PortfolioViewSet)
 
-router2 = routers.DefaultRouter()
-router2.register(r'transaction', TransactionViewSet)
+router.register(r'transaction', TransactionViewSet)
 
 
 urlpatterns = [
@@ -17,5 +16,4 @@ urlpatterns = [
     path('rest-auth/', include('rest_auth.urls')),
     path('rest-auth/registration/', include('rest_auth.registration.urls')),
     path('', include(router.urls)),
-    path('', include(router2.urls))
 ]

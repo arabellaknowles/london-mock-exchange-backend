@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     'portfolio',
     'api',
     'users',
+    'django_extensions'
 ]
 AUTH_USER_MODEL = 'users.CustomUser'
 

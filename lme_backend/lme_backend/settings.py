@@ -46,7 +46,6 @@ INSTALLED_APPS = [
     'rest_auth',
     'rest_auth.registration',
     'portfolio',
-    'transaction',
     'api',
     'users',
     'django_extensions'

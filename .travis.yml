@@ -1,0 +1,8 @@
+language: python
+python:
+  - "3.9.0"
+# command to install dependencies
+install:
+  - pipenv install
+# command to run tests
+script: 'true'

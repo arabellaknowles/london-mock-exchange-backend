@@ -7,15 +7,20 @@ from .models import Portfolio, Transaction
 # Create your views here.
 
 class PortfolioViewSet(viewsets.ModelViewSet):
-    queryset = Portfolio.objects.all()
     serializer_class = PortfolioSerializer
+
+    def get_queryset(self):
+        return Portfolio.objects.filter(owner=self.request.user)
 
     def perform_create(self, serializer):
         serializer.save(owner=self.request.user)
 
 class TransactionViewSet(viewsets.ModelViewSet):
-    queryset = Transaction.objects.all()
     serializer_class = TransactionSerializer
 
+    def get_queryset(self):
+        return Transaction.objects.filter(portfolio=self.kwargs['portfolio_pk'])
+
     def perform_create(self, serializer):
-        serializer.save()
+        portfolio = Portfolio.objects.get(pk=self.kwargs['portfolio_pk'])
+        serializer.save(portfolio=portfolio)

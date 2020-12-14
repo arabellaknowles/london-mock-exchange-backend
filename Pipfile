@@ -10,6 +10,7 @@ django-rest-auth = "*"
 django-allauth = "*"
 django-cors-headers = "*"
 django-extensions = "*"
+drf-nested-routers = "*"
 
 [dev-packages]
 

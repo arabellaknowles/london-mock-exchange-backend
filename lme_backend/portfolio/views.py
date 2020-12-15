@@ -12,7 +12,7 @@ class PortfolioViewSet(viewsets.ModelViewSet):
 
     def get_queryset(self):
         user = Token.objects.get(key=self.request.headers['Authorization']).user
-        return Portfolio.objects.filter(owner=self.request.user)
+        return Portfolio.objects.filter(owner=user)
 
     def perform_create(self, serializer):
         user = Token.objects.get(key=self.request.headers['Authorization']).user

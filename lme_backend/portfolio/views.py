@@ -11,16 +11,11 @@ class PortfolioViewSet(viewsets.ModelViewSet):
     serializer_class = PortfolioSerializer
 
     def get_queryset(self):
-        user = Token.objects.get(key=self.request.headers.Authorization).user
-        # print('self', self)
-        # print('self.request', self.request)
-        # print('self.request.headers', self.request.headers)
-        # print('self.request.headers.authorization', self.request.headers.Authorization)
+        user = Token.objects.get(key=self.request.headers['Authorization']).user
         return Portfolio.objects.filter(owner=self.request.user)
 
     def perform_create(self, serializer):
-        user = Token.objects.get(key=self.request.headers.Authorization).user
-        print(user)
+        user = Token.objects.get(key=self.request.headers['Authorization']).user
         serializer.save(owner=user)
 
 class TransactionViewSet(viewsets.ModelViewSet):

@@ -4,7 +4,7 @@ from .models import Portfolio, Transaction
 class PortfolioSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Portfolio
-        fields = ('name', 'net_earnings', 'owner_id')
+        fields = ('id', 'name', 'net_earnings', 'owner_id')
 
 class TransactionSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:

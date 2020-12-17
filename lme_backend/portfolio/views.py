@@ -12,11 +12,9 @@ class PortfolioViewSet(viewsets.ModelViewSet):
 
     def get_queryset(self):
         user = Token.objects.get(key=self.request.headers['Authorization']).user
-        print("im in the get queryset")
         portfolios = Portfolio.objects.filter(owner=user)
         for portfolio in portfolios:
             portfolio.calculate_net_profit()
-            print("im calculating profit")
 
         return Portfolio.objects.filter(owner=user)
 

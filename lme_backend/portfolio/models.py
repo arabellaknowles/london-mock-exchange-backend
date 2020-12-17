@@ -11,13 +11,15 @@ class Portfolio(models.Model):
     def __str__(self):
            return self.name
 
-    def calculate_net_profit():
+    def calculate_net_profit(self):
         print("im in the calcualate method")
         net_profit = 0
         transactions =  Transaction.objects.filter(portfolio=self.id)
         print('transactions', transactions)
         for transaction in transactions:
-            net_profit += transaction['net_earnings']
+            print('transaction object', transaction.net_earnings)
+            money = transaction['net_earnings']
+            net_profit += money
         print('in the calculate net profit method')
         print('net_profit', net_profit)
         Portfolio.objects.get(id=self.id).update(net_earnings=net_profit)

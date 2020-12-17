@@ -14,12 +14,12 @@ class Portfolio(models.Model):
     def calculate_net_profit(self):
         net_profit = 0
         transactions =  Transaction.objects.filter(portfolio=self.id)
+        print('transactions', transactions)
         for transaction in transactions:
-            netprofit += transaction.net_earnings
-        self.net_earnings = net_profit
-
-
-
+            netprofit += transaction['net_earning']
+        print('in the calculate net profit method')
+        print('net_profit', net_profit)
+        Portfolio.objects.get(id=self.id).update(net_earnings=net_profit)
 
 class Transaction(models.Model):
     ticker = models.CharField(max_length=60)

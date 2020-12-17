@@ -26,4 +26,6 @@ class TransactionViewSet(viewsets.ModelViewSet):
 
     def perform_create(self, serializer):
         portfolio = Portfolio.objects.get(pk=self.kwargs['portfolio_pk'])
+        portfolio.calculate_net_profit()
+        print('im in perform create')
         serializer.save(portfolio=portfolio)

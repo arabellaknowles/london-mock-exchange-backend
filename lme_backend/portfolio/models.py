@@ -11,6 +11,16 @@ class Portfolio(models.Model):
     def __str__(self):
            return self.name
 
+    def calculate_net_profit(self):
+        net_profit = 0
+        transactions =  Transaction.objects.filter(portfolio=self.id)
+        for transaction in transactions:
+            netprofit += transaction.net_earnings
+        self.net_earnings = net_profit
+
+
+
+
 class Transaction(models.Model):
     ticker = models.CharField(max_length=60)
     instrument_name = models.CharField(max_length=60)

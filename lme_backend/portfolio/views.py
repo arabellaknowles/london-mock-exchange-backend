@@ -12,6 +12,12 @@ class PortfolioViewSet(viewsets.ModelViewSet):
 
     def get_queryset(self):
         user = Token.objects.get(key=self.request.headers['Authorization']).user
+        print("im in the get queryset")
+        portfolios = Portfolio.objects.filter(owner=user)
+        for portfolio in portfolios:
+            portfolio.calculate_net_profit()
+            print("im calculating profit")
+
         return Portfolio.objects.filter(owner=user)
 
     def perform_create(self, serializer):
@@ -26,6 +32,4 @@ class TransactionViewSet(viewsets.ModelViewSet):
 
     def perform_create(self, serializer):
         portfolio = Portfolio.objects.get(pk=self.kwargs['portfolio_pk'])
-        portfolio.calculate_net_profit()
-        print('im in perform create')
         serializer.save(portfolio=portfolio)

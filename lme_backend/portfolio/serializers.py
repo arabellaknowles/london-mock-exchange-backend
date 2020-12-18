@@ -11,6 +11,7 @@ class TransactionSerializer(serializers.HyperlinkedModelSerializer):
         model = Transaction
         fields = (
           'ticker',
+          'instrument_name',
           'number_of_shares',
           'trade_date',
           'close_out_date',

@@ -25,4 +25,13 @@ For this API, we used Django and Django Rest Frameworks to build a backend that 
 
 ## Usage:
 
-All routes begin with '/api/v1/'. You can create, read, update, and delete portfolios by sending the relevant request to 'api/v1/portfolio'. To create a transaction, send the request to 'api/v1/portfolio/{portfolio_id}/transaction
+All routes begin with '/api/v1/'. You can create, read, update, and delete portfolios by sending the relevant request to 'api/v1/portfolio'. To create a transaction, send the request to 'api/v1/portfolio/{portfolio_id}/transaction.
+
+## Technologies Used:
+
+Django
+Django Rest Framework
+Django Rest Auth
+SQLite
+Python
+

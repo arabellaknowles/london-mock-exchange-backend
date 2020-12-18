@@ -13,6 +13,7 @@ class Portfolio(models.Model):
 
 class Transaction(models.Model):
     ticker = models.CharField(max_length=60)
+    instrument_name = models.CharField(max_length=60)
     number_of_shares = models.IntegerField()
     trade_date = models.DateField()
     close_out_date = models.DateField()

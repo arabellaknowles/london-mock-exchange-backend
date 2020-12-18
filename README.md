@@ -29,9 +29,9 @@ All routes begin with '/api/v1/'. You can create, read, update, and delete portf
 
 ## Technologies Used:
 
-Django
-Django Rest Framework
-Django Rest Auth
-SQLite
-Python
+* Django
+* Django Rest Framework
+* Django Rest Auth
+* SQLite
+* Python
 

@@ -1,0 +1,4 @@
+release: python manage.py makemigrations --no-input
+release: python manage.py migrate --no-input
+
+web: sh -c 'cd ./lme_backend/ && exec gunicorn lme_backend.wsgi --log-file -'

@@ -1,5 +1,5 @@
 # London Mock Exchange API
-This is a backend API created for trading applications, managing users, portfolio and transactions. For a compatible static frontend user interface, checkout this [London Mock Exchange repository](https://github.com/arabellaknowles/london-mock-exchange-frontend). Click [here](http://londonmockexchange.surge.sh/) to view the live website. 
+This is a backend API created for trading applications, managing users, portfolios and transactions. For a compatible static frontend user interface, checkout this [London Mock Exchange repository](https://github.com/arabellaknowles/london-mock-exchange-frontend). Click [here](http://londonmockexchange.surge.sh/) to view the live website. 
 
 ## Usage:
 Our API is deployed on heroku : https://london-mock-exchange.herokuapp.com/api/v1   

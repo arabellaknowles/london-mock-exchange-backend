@@ -11,6 +11,8 @@ django-allauth = "*"
 django-cors-headers = "*"
 django-extensions = "*"
 drf-nested-routers = "*"
+django-heroku = "*"
+gunicorn = "*"
 
 [dev-packages]
 

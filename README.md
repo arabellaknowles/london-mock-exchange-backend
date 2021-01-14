@@ -10,7 +10,7 @@ An authentication token is required for any portfolio route requests.
 | /rest-auth/login/ | POST | create | Signs in existing user |
 | /rest-auth/registration/ | POST | create | Registers new user |
 | /portfolio/ | POST | create | Creates new Portfolio |
-| /portfolio | GET | show | Lists all portfolios belonging to the current user |
+| /portfolio/ | GET | show | Lists all portfolios belonging to the current user |
 | /portfolio/:id/transaction/ | POST | create | Creates new transaction |
 | /porfolio/:id/transaction/ | GET | show | Lists all transactions from the portfolio |
 

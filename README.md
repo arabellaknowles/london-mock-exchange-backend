@@ -1,5 +1,5 @@
 # London Mock Exchange API
-This is a backend API created for trading applications, managing users, portfolios and transactions. For a compatible static frontend user interface, checkout this [London Mock Exchange repository](https://github.com/arabellaknowles/london-mock-exchange-frontend). Click [here](http://londonmockexchange.surge.sh/) to view the live website. 
+This is a backend API created for trading applications. It manages users, portfolios and transactions. For a compatible static frontend user interface, checkout this [London Mock Exchange repository](https://github.com/arabellaknowles/london-mock-exchange-frontend). Click [here](http://londonmockexchange.surge.sh/) to view the live website. 
 
 ## Usage:
 Our API is deployed on heroku : https://london-mock-exchange.herokuapp.com/api/v1   
@@ -11,6 +11,7 @@ An authentication token is required for any portfolio route requests.
 | /rest-auth/registration/ | POST | create | Registers new user |
 | /portfolio/ | POST | create | Creates new Portfolio |
 | /portfolio/ | GET | show | Lists all portfolios belonging to the current user |
+| /portfolio/:id | DELETE | destroy | Deletes the selected portfolio |
 | /portfolio/:id/transaction/ | POST | create | Creates new transaction |
 | /porfolio/:id/transaction/ | GET | show | Lists all transactions from the portfolio |
 
